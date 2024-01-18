@@ -1,12 +1,14 @@
 
 <script>
   export let onToggleSidebar;
+  import {PUBLIC_BASE_PATH} from '$env/static/public'
+  
 </script>
 
 <nav class="navbar navbar-expand-md navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">PROYECT
-        <!-- <img src="/enco_logo.png" class="img-fluid" alt="" width="100px"> -->
+      <a class="navbar-brand" href="{PUBLIC_BASE_PATH}/">PROYECT 
+         <img src="{PUBLIC_BASE_PATH}/logo.jpg" class="img-fluid" alt="" width="100px"> 
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,18 +18,32 @@
         <ul class="navbar-nav me-auto my-2 my-lg-0 ">
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            <a class="nav-link active" aria-current="page" href="{PUBLIC_BASE_PATH}/home">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link" href="{PUBLIC_BASE_PATH}/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/account">account</a>
+            <a class="nav-link" href="{PUBLIC_BASE_PATH}/account">account</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">login</a>
+            <a class="nav-link" href="{PUBLIC_BASE_PATH}/login">login</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{PUBLIC_BASE_PATH}/logout">logout</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              blog
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{PUBLIC_BASE_PATH}/blog/ingenieria">Ingenieria</a></li>
+              <li><a class="dropdown-item" href="{PUBLIC_BASE_PATH}/blog/medicina">Medicina</a></li>
+              <li><a class="dropdown-item" href="{PUBLIC_BASE_PATH}/blog/electronica">Electronica</a></li>
+            </ul>
+          </li>
+
           <button on:click={onToggleSidebar}>
             Open
           </button>
