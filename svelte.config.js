@@ -21,7 +21,9 @@ const config = {
         }), */
         // ADAPTER SPA
         adapter: adapter({
+            pages: "docs",
             fallback: "index.html", // may differ from host to host
+            assets: "docs/assets",
         }),
 
         paths: {
